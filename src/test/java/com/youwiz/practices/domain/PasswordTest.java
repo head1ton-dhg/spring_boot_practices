@@ -100,4 +100,19 @@ public class PasswordTest {
             password.changePassword(newPassword, oldPassword);
         });
     }
+
+    @Test
+    public void changePassword_비밀번호변경이_4회일치하지않더라도_5회에서일치하면_실패카운트초기화() {
+        final String newPassword = "newPassword";
+        final String oldPassword = "oldPassword";
+
+        password.changePassword(newPassword, oldPassword);
+        password.changePassword(newPassword, oldPassword);
+        password.changePassword(newPassword, oldPassword);
+        password.changePassword(newPassword, passwordValue);
+
+        assertTrue(password.isMatched(newPassword));
+        assertEquals(password.getFailedCount(), 0);
+        assertEquals(password.getTtl(), TTL);
+    }
 }
