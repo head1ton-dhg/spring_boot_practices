@@ -5,8 +5,8 @@ import com.youwiz.practices.domain.Address;
 import com.youwiz.practices.domain.Email;
 import com.youwiz.practices.dto.AccountDto;
 import com.youwiz.practices.repository.AccountRepository;
-import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -14,14 +14,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
 
+//@SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class AccountServiceJUnit5Test {
 
@@ -58,7 +57,7 @@ public class AccountServiceJUnit5Test {
     private AccountDto.SignUPReq buildSignUpReq() {
         return AccountDto.SignUPReq.builder()
                 .address(buildAddress("서울", "성동구", "052-2344"))
-                .email(buildEmail("email"))
+                .email(buildEmail("test123@gmail.com"))
                 .firstName("두산")
                 .lastName("백")
                 .password("password111")

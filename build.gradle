@@ -38,15 +38,22 @@ dependencies {
     implementation 'com.querydsl:querydsl-jpa'
     implementation 'com.querydsl:querydsl-apt'
 
-//    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
-
     // junit 테스트 시 필수...
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.6.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
+
+    // mockito 테스트 시 필수
+    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.5.2'
+
+//    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+//    testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.6.2'
+
+//    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
     testCompile group: 'org.mockito', name: 'mockito-core', version: '3.5.2'
-    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.5.2'
-    testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.6.2'
-    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.5.2'
+
 
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'

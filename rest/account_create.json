@@ -1,0 +1,15 @@
+{
+  "address": {
+    "address1": "서울",
+    "address2": "성동구",
+    "zip": "052-2345"
+  },
+  "email": {
+    "host": "@gmail.com",
+    "id": "test",
+    "value": "test@gmail.com"
+  },
+  "firstName": "두산",
+  "lastName": "백",
+  "password": "1234"
+}
